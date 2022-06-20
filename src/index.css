@@ -1,13 +1,192 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap');
+
+:root {
+  --background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --mainWhite: hsl(0, 0%, 100%);
+  --lightGray: hsl(0, 0%, 98%);
+  --lightGrayishBlue: hsl(233, 11%, 84%);
+  --darkGrayishBlue: hsl(236, 9%, 61%);
+  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+  --veryDarkBlue: hsl(235, 21%, 11%);
+  --darkDesaturatedBlue: hsl(235, 24%, 19%);
+  --lightGrayishBlue: hsl(234, 39%, 85%);
+  --lightGrayishBlueHover: hsl(236, 33%, 92%);
+  --darkThemeGrayishBlue: hsl(234, 11%, 52%);
+  --veDarkGrayBlue: hsl(233, 35%, 60%);
+  --varyDarkGrayBlue: hsl(237, 14%, 26%);
+  --josefinSans: 'Josefin Sans', sans-serif;
+  --spacing: 0.5rem;
+  --radius: 0.25rem;
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  font-family: var(--josefinSans);
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+#light{
+  background-color: var(--mainWhite);
+}
+#dark{
+  background-color: var(--veryDarkBlue);
+}
+h3{
+  text-transform: uppercase;
+  color: var(--mainWhite);
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: var(--spacing);
+}
+p, a{
+  color: var(--darkGrayishBlue);
+}
+a{
+  text-decoration: none;
+  padding: 0 0.5rem;
+}
+a:active, a:hover{
+  color: var(--varyDarkGrayBlue);
+}
+input{
+  border: 0;
+  outline: none;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+.btn {
+  padding: 10px 15px;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+}
+#light .btn {
+  background-color: var(--darkDesaturatedBlue);
+  color: var(--lightGray);
+}
+#dark .btn {
+  background-color: var(--varyDarkGrayBlue);
+  color: var(--lightGray);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* HEADER */
+.header {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 38vh;
+  width: 100vw;
+}
+#light .header{
+  background-image: url("./images/bg-desktop-light.jpg");
+}
+#dark .header{
+  background-image: url("./images/bg-desktop-dark.jpg");
+}
+
+/* TODO */
+.to-do{
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+  width: 500px;
+  margin: auto;
+}
+/* title */
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--mainWhite);  
+  margin: 1rem 0 2rem;
+}
+.title button{
+  background-color: transparent;
+}
+.icon{
+  font-size: 1.75rem;
+  color: var(--mainWhite);
+}
+/* create-to-do & list-items */
+.create-to-do, .list-items{
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px;
+  margin: 1rem 0;
+  border-radius: var(--radius);
+}
+.list-items {
+  margin: 0;
+}
+#light .list-items{
+  border-bottom: 2px solid var(--lightGrayishBlue);
+}
+#dark .list-items{
+  border-bottom: 2px solid var(--veryDarkBlue);
+}
+.input-text{
+  font-size: 1.05rem;
+}
+#light .create-to-do, #light .input-text, #light .list-items{
+  background-color: var(--mainWhite);
+  color: var(--darkDesaturatedBlue);
+}
+#dark .create-to-do, #dark .input-text, #dark .list-items{
+  background-color: var(--darkDesaturatedBlue);
+  color: var(--lightGrayishBlue);
+}
+.flex-icons{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+#light .flex-icons button{
+  background-color: var(--mainWhite);
+}
+#dark .flex-icons button{
+  background-color: var(--darkDesaturatedBlue);
+  color: var(--lightGrayishBlue);
+}
+.icons{
+  font-size: 1.2rem;
+}
+.flex-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Alert */
+.alarm {
+  width: 100%;
+  padding: 0.75rem 0;
+  font-size: 0.85rem;
+  border-radius: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  text-align: center;
+}
+#light .alarm{
+  background-color: var(--mainWhite);
+}
+#dark .alarm{
+  background-color: var(--darkDesaturatedBlue);
+}
+#light .alert-danger p {
+  color: var(--darkDesaturatedBlue);
+}
+#dark .alert-danger p {
+  color: var(--mainWhite);
 }
