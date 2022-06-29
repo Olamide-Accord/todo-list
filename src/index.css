@@ -71,10 +71,11 @@ button {
   cursor: pointer;
 }
 .btn {
-  padding: 1.2rem 1.7rem;
+  padding: 1.05rem 1.5rem;
   border-radius: var(--radius);
   text-transform: capitalize;
   letter-spacing: var(--spacing);
+  font-size: 1.5rem;
 }
 #light .btn {
   background-color: var(--darkDesaturatedBlue);
@@ -91,7 +92,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
   height: 38vh;
-  width: 100vw;
+  width: 100%;
 }
 #light .header{
   background-image: url("./images/bg-desktop-light.jpg");
@@ -109,7 +110,16 @@ button {
 }
 @media (max-width: 450px) {
   html {
-    font-size: 50%;
+    font-size: 40%;
+  }
+}
+@media (max-width: 400px) {
+
+  .to-do{
+    width: 25rem;
+    top: 28%;
+    left: 5%;
+    transform: translate(-5%, -28%);
   }
 }
 
@@ -145,7 +155,7 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1.2rem 1.7rem;
+  padding: 1.2rem 1.5rem;
   margin: 1rem 0;
   border-radius: var(--radius);
 }
@@ -182,7 +192,7 @@ button {
   color: var(--lightGrayishBlue);
 }
 .icons{
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
 .flex-btn{
   display: flex;
